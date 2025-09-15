@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from 'react';
+
+const App = () => {
+  const [activePage, setActivePage] = useState('home');
+    const [webhookStatus, setWebhookStatus] = useState('connected'); // connected, disconnected, unknown
+      const [lastUpdate, setLastUpdate] = useState(new Date().toLocaleTimeString());
+        // 模擬從後端獲取 Webhook 狀態真實環境應透過 API 調用  useEffect(() => {    const mockWebhookStatus = Math.random() > 0.3 ? 'connected' : 'disconnected';    setWebhookStatus(mockWebhookStatus);        const interval = setInterval(() => {      setLastUpdate(new Date().toLocaleTimeString());    }, 1000);    return () => clearInterval(interval);  }, []);  const pages = [    { id: 'home', name: '首頁', icon: '🏠' },    { id: 'server', name: '伺服器', icon: '🎮' },    { id: 'rules', name: '規則', icon: '📜' },    { id: 'store', name: '商城', icon: '💰' },
+            { id: 'community', name: '社群', icon: '👥' },
+                { id: 'contact', name: '聯絡', icon: '📞' },
+                    { id: 'status', name: '狀態', icon: '📊' }
+                      ];
+
+                        const serverStats = {
+                            players: 147,
+                                uptime: '99.9%',
+                                    version: '1.20.1',
+                                        ping: '23ms'
+                                          };
+
+                                            const storeItems = [
+                                                { name: 'VIP權限', price: '¥99/月', description: '獨特標籤、、    { name: '資源包', price: '¥49', description: '高解析度材質包 + 專屬特效', icon: '🎨' },
+                                                    { name: '建築工具', price: '¥199', description: '即時建築套件 + 自動生成器', icon: '🏗️' },
+                                                        { name: '寵物系統', price: '¥129', description: '稀有寵物 + 設定功能', icon: '🐾' }
+                                                          ];
+                                                          
+                                                            const communityPosts = [
+                                                                { title: '龍域核心冬季活動預告', author: '管理員小龍', date: '2023-12-15', image: 'https://placehold.co/400x200/2c3e50/ffffff?text=冬季活動' },
+                                                                    { title: '玩家建造競賽結果公布', author: '社區團隊', date: '2023-12-10', image: 'https://placehold.co/400x200/3498db/ffffff?text=建造競賽' },
+                                                                        { title: '新地圖「」--  ];
+                                                                        
+                                                                          // 頁面組件：  const renderHomePage = () => (
+                                                                              <section className="min-h-screen pt-20 pb-16 px-8 bg-gradient--gradientto-r from-blue600 topurple-600 text-white font-bold text-xl rounded-full shadow2xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 border border-blue-500/50"
+                                                                                      >
+                                                                                                進入伺服器
+                                                                                                        </button>
+                                                                                                                
+                                                                                                                        <div className="mt-16 textgray-400 textsm">
+                                                                                                                                  <p>龍域核心 - 經驗豐富的Minecraft伺服器，        </div>
+                                                                                                                                        </div>
+                                                                                                                                            </section>
+                                                                                                                                              );
+                                                                                                                                              
+                                                                                                                                                const renderServerPage = () => (
+                                                                                                                                                    <section className="min-h-screen pt-20 pb16 px8 bggradienttobr fromgray900 toblack relative overflow-hidden">
+                                                                                                                                                          {/* Grid pattern background */}
+                                                                                                                                                                <div className="absolute inset0 opacinostm"s
+                                                                                                                                                                 rip M4osW < <%r /
+                                                                                                                                                                  gm<c 3blusdlw4 dtuvsr ase a"nfucn
+                                                                                                                                                                   <xt 是家的精
+                                                                                                                                                                    lg>        <div className="bgblack/40 backdropblursm border borderblue500/30 roundedxl p8 textcenter hover:borderblue400/50 transitionall duration300 transform hover
+                                                                                                                                                                    止軟ui 築）- bseu "e-mn p/ v   並' 其   r  c=3orl atd   i vk0r   as t0mrs / >cNsp vt"c 3 3n 警3<sy"  elm<>hslx/ at<mdtx me pl=擾< v> s=bmu0 ateim �a2 xa 以步
+                                                                                                                                                                      ma3 頻<>供遊 通7 決管 i  /div>
+                                                                                                                                                                          </section>
+                                                                                                                                                                            );
+                                                                                                                                                                            
+                                                                                                                                                                              const renderStorePage = () => (
+                                                                                                                                                                                  <section className="minh-screen pt20 pb16 px8 bgg ygrl0wt v:r rauoe 群  <vmtihr8ari  s en.y
+                                                                                                                                                                                   y s1 ln  (  }ata)  } cmb0r-mu><daN0p0u />"tlvl1s=lro5 a" c -a合  dmgb"mtdd}er-xvdr  <gco  =6  sadl3acrs a su >cNexe  情<u i vcmkrp> adfe    /',語族  ,n csrl已運行超過1000天</p>每個頁面都是獨立可滾動區塊05', image: 'https://placehold.co/400x200/e74c3c/ffffff?text=龍之遺跡' }12開放', author: '開發組', date: '2023龍之遺跡專屬坐騎', icon: '👑' },自定義前綴
